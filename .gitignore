@@ -1,0 +1,10 @@
+.DS_Store
+*/target/*
+.classpath
+.project
+.settings/
+target/
+*.iml
+node_modules
+npm-debug.log
+applogging.log

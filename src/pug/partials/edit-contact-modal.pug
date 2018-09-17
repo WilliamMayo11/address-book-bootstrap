@@ -1,0 +1,25 @@
+#editContact.modal.fade(tabindex="-1" role="dialog" aria-labelledby="editContactModalTitle" aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                h5#editContactModalTitle.modal-title Edit Contact
+                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden="true") &times;
+            .modal-body
+                form(data-edit-contact-form role="form")
+                    input(type="hidden" name="contactId")
+                    .form-group
+                        label(for="editContactEmailAddress") Email address
+                        input#editContactEmailAddress.form-control(type="email" name="contactEmailAddress" placeholder="john.doe@example.com" required)
+                    .form-row
+                        .col
+                            .form-group
+                                label(for="editContactFirstName") First Name
+                                input#editContactFirstName.form-control(type="text" name="contactFirstName" placeholder="John" required)
+                        .col
+                            .form-group
+                                label(for="editContactLastName") Last Name
+                                input#editContactLastName.form-control(type="text" name="contactLastName" placeholder="Doe" required)
+                    .text-right
+                        button.btn.btn-secondary.mr-2(type="button" data-dismiss="modal") Cancel
+                        button.btn.btn-primary(type="button" data-save-edit-contact) Save

@@ -1,0 +1,24 @@
+#addContact.modal.fade(tabindex="-1" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                h5#contactModalTitle.modal-title Add Contact
+                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden="true") &times;
+            .modal-body
+                form(data-add-contact-form role="form")
+                    .form-group
+                        label(for="contactEmailAddress") Email address
+                        input#contactEmailAddress.form-control(type="email" name="contactEmailAddress" placeholder="john.doe@example.com" required)
+                    .form-row
+                        .col
+                            .form-group
+                                label(for="contactFirstName") First Name
+                                input#contactFirstName.form-control(type="text" name="contactFirstName" placeholder="John" required)
+                        .col
+                            .form-group
+                                label(for="contactLastName") Last Name
+                                input#contactLastName.form-control(type="text" name="contactLastName" placeholder="Doe" required)
+                    .text-right
+                        button.btn.btn-secondary.mr-2(type="button" data-dismiss="modal") Cancel
+                        button.btn.btn-primary(type="button" data-save-contact) Save

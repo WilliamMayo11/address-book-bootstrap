@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	.container
+		h1.mt-4 Address Book
+		div(data-address-book)
+			table.d-none.table.hidden(data-address-book-contact-list)
+				thead
+					tr
+						th(scope="col") Last Name
+						th(scope="col") First Name
+						th(scope="col") E-mail Address
+						th(scope="col")
+						th(scope="col")
+				tbody(data-address-book-contact-list-data)
+			p(data-address-book-empty) You have no contacts in your address book.
+			button.btn.btn-primary(type="button" data-toggle="modal" data-target="#addContact") Add Contact
+
+			include partials/add-contact-modal
+			include partials/edit-contact-modal

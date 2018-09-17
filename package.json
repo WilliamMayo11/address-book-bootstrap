@@ -1,0 +1,62 @@
+{
+	"name": "address-book-bootstrap",
+	"version": "1.0.0",
+	"description": "Lightweight address book app",
+	"main": "app.js",
+	"scripts": {
+		"build": "npm-run-all --parallel \"build:* -- {@}\" --",
+		"build:css": "npm run scss && npm run cssmin",
+		"build:html": "pug -o ./dist src/pug/index.pug",
+		"build:js": "webpack --progress",
+		"cssmin": "cleancss -o dist/css/style.min.css dist/css/style.css",
+		"scss": "node-sass -o dist/css src/scss/style.scss",
+		"watch": "npm-run-all --parallel \"watch:* -- {@}\" --",
+		"watch:css": "nodemon --ext scss --watch src/ --exec npm run build:css --",
+		"watch:html": "npm run build:html -- --watch",
+		"watch:js": "npm run build:js -- --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gmjanova/address-book-bootstrap.git"
+	},
+	"author": "Jon Hobein",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gmjanova/address-book-bootstrap/issues"
+	},
+	"homepage": "https://github.com/gmjanova/address-book-bootstrap#readme",
+	"devDependencies": {
+		"@babel/core": "^7.0.1",
+		"@babel/preset-env": "^7.0.0",
+		"babel": "^6.23.0",
+		"babel-eslint": "^9.0.0",
+		"babel-loader": "^8.0.2",
+		"babel-plugin-syntax-dynamic-import": "^6.18.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-es2015": "^6.24.1",
+		"clean-css-cli": "^4.2.1",
+		"css-loader": "^1.0.0",
+		"eslint": "^5.6.0",
+		"eslint-config-idiomatic": "^4.0.0",
+		"eslint-loader": "^2.1.0",
+		"exports-loader": "^0.7.0",
+		"jquery": "^3.3.1",
+		"localforage": "^1.7.2",
+		"node-sass": "^4.9.3",
+		"nodemon": "^1.18.4",
+		"npm-run-all": "^4.1.3",
+		"popper": "^1.0.1",
+		"popper.js": "^1.14.4",
+		"postcss-loader": "^3.0.0",
+		"pug": "^2.0.3",
+		"pug-cli": "^1.0.0-alpha6",
+		"sass-loader": "^7.1.0",
+		"style-loader": "^0.23.0",
+		"tether": "^1.4.4",
+		"webpack": "^4.19.0",
+		"webpack-cli": "^3.1.0"
+	},
+	"dependencies": {
+		"bootstrap": "^4.1.3"
+	}
+}
